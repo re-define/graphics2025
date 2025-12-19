@@ -249,7 +249,6 @@ __marimo__/
 
 
 x64/
-third_party/glfw/cmake_uninstall.cmake.in
+
 third_party/glm/cmake
 third_party/glm/.github
-third_party/glfw/cmake
