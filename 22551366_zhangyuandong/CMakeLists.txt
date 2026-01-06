@@ -9,6 +9,8 @@ set(TEXTURE_FILES
     "${CMAKE_SOURCE_DIR}/sun.bmp"
     "${CMAKE_SOURCE_DIR}/earth.bmp"
     "${CMAKE_SOURCE_DIR}/moon.bmp"
+    "${CMAKE_SOURCE_DIR}/texture.png"
+    "${CMAKE_SOURCE_DIR}/model.obj"
 )
 
 # 遍历纹理文件列表，逐个复制到 build 根目录
@@ -85,7 +87,7 @@ include_directories(third_party/glad/include)
 
 add_subdirectory(third_party/glfw)
 add_subdirectory(third_party/glm)
-
+add_subdirectory(third_party/tinyobjloader)
 include_directories(third_party/stb)
 
 file(GLOB SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp) 
@@ -101,5 +103,6 @@ add_executable(${PROJECT_NAME} ${SOURCE_PATH})
 # target_link_libraries(${PROJECT_NAME} Vulkan::Vulkan)
 target_link_libraries(${PROJECT_NAME} glfw)
 target_link_libraries(${PROJECT_NAME} glm::glm)
+target_link_libraries(${PROJECT_NAME} tinyobjloader)
 # target_link_libraries(${PROJECT_NAME} tinyobjloader)
 
